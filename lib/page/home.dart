@@ -26,20 +26,18 @@ class _HomePageState extends State<HomePage> {
             color: Color(0x7A7A7A7A),
             size: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: DropdownButton(
-              value: dropdownvalue,
-              icon: const Icon(Icons.arrow_drop_down_sharp, size: 30),
-              items: items.map((items) {
-                return DropdownMenuItem(value: items, child: Text(items));
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  dropdownvalue = newValue;
-                });
-              },
-            ),
+          const SizedBox(width: 10),
+          DropdownButton(
+            value: dropdownvalue,
+            icon: const Icon(Icons.arrow_drop_down_sharp, size: 30),
+            items: items.map((items) {
+              return DropdownMenuItem(value: items, child: Text(items));
+            }).toList(),
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownvalue = newValue;
+              });
+            },
           ),
         ]),
       ),
